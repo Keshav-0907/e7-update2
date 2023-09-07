@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital@1&family=Public+Sans:wght@300&family=Tiro+Devanagari+Hindi&display=swap');
+*{
+  font-family: 'Public Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.link a{
+  color: #000000;
+  text-decoration: none;
+}
+
+.link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 100;
+}
+
+.nav-main{
+  display: flex;
+  justify-content: center;
+  top: 0;
+  /* position: sticky; */
+  z-index: 1;
+}
+
+
+
+/* whatsapp btn */
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.whatsapp-button:hover {
+  background-color: #128c7e;
+}
+
+.whatsapp-icon {
+  color: #fff;
+  font-size: 28px;
+}
+
+/* Services Page */
+
+.Service-Line-Img{
+  position: absolute;
+  margin-left: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 150px;
+}
+
+.Service-Top{
+  text-align: center;
+}
+
+.service-Top-Text {
+  max-width: 500px;
+  font-weight: 100;
+  font-size: 15px;
+  margin-top: 30px;
+}
+
+/* Hero Page */
+
+.hero-link{
+  padding: 14px;
+  color: black;
+  text-decoration: none;
+}
+
+.video-container video {
+width: 100%;
+height: 100%;
+position: absolute;
+object-fit: cover;
+z-index: 0;
+}
+
+@media only screen and (min-width: 1250px) {
+  .video-container {
+    height: 485px;
+  }
+  
+}
+
+@media only screen and (max-width: 1250px) {
+  .video-container {
+    height: 375px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .video-container {
+    height: 325px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .video-container {
+    height: 250px;
+    
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .video-container {
+    height: 200px;
+    
+    
+  }
+}
+@media only screen and (max-width: 450px) {
+  .video-container {
+    height: 160px;
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 406px) {
+  .video-container {
+    height: 150px;
+    width: 80%;
+  }
+}
+
+.video-container {
+  width: 100%;
+  position: relative;
+}
+
+.video-container video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.video-container .caption {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  color: #dc0000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150%;
+}
+
+
+/* Testimonial main page  */
+
+.testimonial-main{
+  margin: 20px;
+  max-width: 50rem;
+  padding: 1rem;
+  box-shadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+
+}
+
+.testimonial-img{
+  width: 80px;
+}
+
+
+/* footer page  */
+
+.footer-main{
+  background-color: #ffe2bf;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-main{
+    flex-direction: column;
+  }
+}
+
+.footer-info{
+  display: flex;
+  justify-content: center;
+}
+
+.footer-about{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-links ul {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  display: flex;
+  list-style: none;
+  line-height: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-links ul li {
+    margin: 0px 10px;
+  }
+}
+
+.select{
+  min-width: 106%;
+  min-height: 30px;
+}
+  
+
+.footer-links ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: none;
+}
+
+/* form */
+
+.form-main{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
+.form-main label{
+  font-family: 200;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.form-main input{
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+
+}
+
+.form-main select{
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+
+.form-main textarea{
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea,
+#contact button[type="submit"] {
+  font: 400 16px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+#contact {
+  background: #F9F9F9;
+  padding: 25px;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#contact h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0px -12px 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#contact button[type="submit"] {
+  text-align: center;
+  cursor: pointer;
+  width: 107%;
+  border: none;
+  background: #FFB55F;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#contact button[type="submit"]:hover {
+  background: #FF971E;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
