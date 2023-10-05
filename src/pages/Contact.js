@@ -1,38 +1,87 @@
-import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser'
-import { Box, Container, Typography } from '@mui/material'
+import React, { useRef, useState } from 'react';
+// import emailjs from '@emailjs/browser'
+import { Box, Button, Container, Typography } from '@mui/material'
 import { Grid } from '@mui/material'
+import { Link } from 'react-router-dom'
+import qr from '../Assets/QRu.jpeg'
+import '../App.css';
 
 
+
+// maptilersdk.config.apiKey = 'AqEzWnD35d6jlMJVxB5R';
+
+// var monument = [-77.0353, 38.8895];
+//     var map = new maptilersdk.Map({
+//         container: 'map',
+//         style: maptilersdk.MapStyle.STREETS,
+//         center: monument,
+//         zoom: 15
+//     });
+
+//     // create the popup
+//     var popup = new maptilersdk.Popup({ offset: 25 }).setText(
+//         'Construction on the Washington Monument began in 1848.'
+//     );
+
+//     // create DOM element for the marker
+//     var el = document.createElement('div');
+//     el.id = 'marker';
+
+//     // create the marker
+//     new maptilersdk.Marker(el)
+//         .setLngLat(monument)
+//         .setPopup(popup) // sets a popup on this marker
+//         .addTo(map);
 
 
 
 const Contact = () => {
 
-    const form = useRef();
+    const form = useRef(null);
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbwzXF8qH-5xiPq7BdNPyV2W7UW4CcI7YT2gaLFRxD8o4yU28Q9L2UEZAJIe7Nw-gwC8/exec"
+    const [loading, setLoading] = useState(false)
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setLoading(true)
 
-        emailjs
-            .sendForm(
-                "service_pb9hapv",
-                "template_fbi8scr",
-                form.current,
-                "F4-cL2_b52u2Ir2oI"
-            )
-            .then(
-                (result) => {
-                    console.log(result.text);
-                    alert('Your message has been sent successfully. We will contact you soon!')
+        fetch(scriptUrl, {
+            method: 'POST',
+            body: new FormData(form.current),
+
+        }).then(res => {
+            console.log("SUCCESSFULLY SUBMITTED")
+            alert('Your message has been sent successfully. We will contact you soon!')
+            setLoading(false)
+        })
+
+            .catch(err => console.log(err))
+
+    }
 
 
-                },
-                (error) => {
-                    console.log(error.text);
-                }
-            );
-    };
+    // const sendEmail = (e) => {
+    //     e.preventDefault();
+
+    //     emailjs
+    //         .sendForm(
+    //             "service_pb9hapv",
+    //             "template_fbi8scr",
+    //             form.current,
+    //             "F4-cL2_b52u2Ir2oI"
+    //         )
+    //         .then(
+    //             (result) => {
+    //                 console.log(result.text);
+    //                 alert('Your message has been sent successfully. We will contact you soon!')
+
+
+    //             },
+    //             (error) => {
+    //                 console.log(error.text);
+    //             }
+    //         );
+    // };
 
     return (
         <>
@@ -45,8 +94,7 @@ const Contact = () => {
                 </Typography>
             </Box>
 
-            {/* <Container>
-
+            <Container>
                 <Link to='/'>
                     <Grid sx={{
                         display: 'inline-block',
@@ -64,21 +112,47 @@ const Contact = () => {
                         ← Go back
                     </Grid>
                 </Link>
-            </Container> */}
+            </Container>
 
             <Box sx={{
                 display: 'flex',
                 flexDirection: 'row',
+                '@media (max-width: 1200px)': {
+                    display: 'flex',
+                    flexDirection: 'column-reverse'
+                }
             }}>
+
+
                 <Container sx={{
                     width: '50%',
-                    '@media (max-width: 1200px)': {
-                        display: 'none'
-                    }
+                    justifyContent: 'center',
+
+
+
 
                 }}>
-                    <img src="https://static.vecteezy.com/system/resources/previews/021/666/231/original/3d-rendering-of-a-customer-service-illustration-call-center-online-customer-support-contact-us-customer-service-for-personal-assistant-service-3d-rendering-png.png" width="600px" alt="err" />
+                    <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'center', paddingTop: '20px' }} >
+                        <Typography sx={{
+                            fontSize: '25px', '@media (max-width: 1200px)': {
+                                fontSize: '15px'
+                            }
+                        }} >
+                            7 E-tech Business Services
+                        </Typography>
+                        <Typography sx={{
+                            fontSize: '15px', '@media (max-width: 1200px)': {
+                                fontSize: '10px'
+                            }
+                        }}>
+
+                            Scan to Contact Us on WhatsApp
+
+                        </Typography>
+                    </Box>
+                    <img src={qr} alt="err" className="contact-image" />
                 </Container>
+
 
                 <Container sx={{
 
@@ -87,41 +161,50 @@ const Contact = () => {
                         display: 'flex',
                         justifyContent: 'center',
                     }}>
-                        <div class="container">
-                            <form id="contact" ref={form} onSubmit={sendEmail}>
-                                <h4>Contact us for custom quote</h4>
-                                <fieldset>
-                                    <input placeholder="Your name" name="user_name" type="text" tabindex="1" required autofocus />
-                                </fieldset>
-                                <fieldset>
-                                    <input placeholder="Your Email Address"  name="user_email"  type="email" tabindex="2" required />
-                                </fieldset>
-                                <fieldset>
-                                    <input placeholder="Your Phone Number (optional)" name="user_phone" type="tel" tabindex="3" required />
-                                </fieldset>
-                                <fieldset>
-                                    <select className='select' name="user_value" id="cars" required>
-                                        <option value="Legal Document Support">Legal Document Support</option>
-                                        <option value="Set-Up your E-Commerce Bussiness">Set-Up your E-Commerce Bussiness</option>
-                                        <option value="Imaging and Cataloging Services">Imaging and Cataloging Services</option>
-                                        <option value="Grow your E-Commerce">Grow your E-Commerce</option>
-                                    </select>
-                                </fieldset>
-                                <fieldset>
-                                    <textarea placeholder="Type your message here...." name="message" tabindex="5" required></textarea>
-                                </fieldset>
-                                <fieldset>
-                                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-                                </fieldset>
+                        <form ref={form} onSubmit={handleSubmit} className="form-main">
+                            <label>First Name *</label>
+                            <input type="text" name="Name" required />
+                            <label >Phone Number *</label>
+                            <input type="number" name="Phone" required />
+                            <label>Email </label>
+                            <input type="email" name="Email" />
+                            <label>Type of service:</label>
+                            <select name="Services" id="cars" required>
+                                <option >Please Select</option>
+                                <option value="Legal Document Support">Legal Document Support</option>
+                                <option value="Set-Up your E-Commerce Bussiness">Set-Up your E-Commerce Bussiness</option>
+                                <option value="Imaging and Cataloging Services">Imaging and Cataloging Services</option>
+                                <option value="Grow your E-Commerce">Grow your E-Commerce</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label>Message</label>
+                            <textarea name="Message" />
+                            <Button
+                                type="submit"
+                                value="Send"
+                                sx={{
+                                    backgroundColor: '#FF971E',
+                                    color: '#fff',
+                                    margin: '20px',
+                                    borderRadius: '20px',
+                                    height: '45px',
+                                    '&:hover': {
+                                        backgroundColor: '#FFB55F',
+                                        color: '#fff',
+                                    },
+                                }}>Submit</Button>
 
-                            </form>
-                        </div>
+                        </form>
                     </Grid>
                 </Container>
             </Box>
+
+            
+            {/* <div id='map'>
+            </div> */}
+
         </>
     );
 };
 
-export default Contact;;
-
+export default Contact;

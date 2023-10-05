@@ -150,7 +150,7 @@ const Footer = () => {
             textAlign: 'center'
 
           }}>
-            <p> Shop No. 1, Ground Floor,155-C, Gher khatti, New Mandi, Muzaffarnagar ,Uttar Pradesh - 251001 </p>
+            <p> E-38, 1st Floor, Sector - 40, Noida, Uttar Pradesh, India , Pin Code- 201303 </p>
           </Typography>
 
           <Grid sx={{
@@ -176,6 +176,15 @@ const Footer = () => {
 
             <Typography  sx={{ padding: '5px'}}>
               +91 9988000223
+            </Typography>
+          </Grid>
+          <Grid sx={{ display: 'flex', justifyContent:'center', color:'grey'}}>
+            <Typography sx={{ padding: '5px'}}>
+              E-mail: 
+            </Typography>
+
+            <Typography  sx={{ padding: '5px'}}>
+            support@7etech.co
             </Typography>
           </Grid>
         </Grid>
