@@ -7,6 +7,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 
+
 const Footer = () => {
   return (
     <Box className="footer-main">
@@ -62,6 +63,7 @@ const Footer = () => {
               },
             }}></InstagramIcon>
             </Link >
+
             <Link to='https://www.facebook.com/profile.php?id=100092264030077&mibextid=ZbWKwL'>
             <FacebookIcon sx={{
               padding: '10px',
@@ -103,6 +105,7 @@ const Footer = () => {
 
             </LinkedInIcon>
             </Link>
+            
           </Grid>
 
         </Container>
@@ -179,11 +182,11 @@ const Footer = () => {
             </Typography>
           </Grid>
           <Grid sx={{ display: 'flex', justifyContent:'center', color:'grey'}}>
-            <Typography sx={{ padding: '5px'}}>
+            <Typography sx={{ padding: '2px'}}>
               E-mail: 
             </Typography>
 
-            <Typography  sx={{ padding: '5px'}}>
+            <Typography  sx={{ padding: '2px'}}>
             support@7etech.co
             </Typography>
           </Grid>

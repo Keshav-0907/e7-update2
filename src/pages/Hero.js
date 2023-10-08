@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { Button } from '@mui/material';
 import Services from './OurServices';
 import Why from './Why';
@@ -16,57 +17,31 @@ import c6 from '../Assets/image6.jpg'
 
 
 const Hero = () => {
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Increment the currentSlide to move to the next one
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % 6); // Assumes you have 6 slides
+    }, 3000); // Change slide every 3 seconds (adjust as needed)
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
   return (
     <>
 
       <div className="">
-      <Carousel showStatus={false} showThumbs={false} showIndicators={false} infiniteLoop={true} >
-  <div style={{ position: 'relative' }}>
-    <img src={c1} alt='err' />
-    <Button
-      sx={{
-        position: 'absolute',
-        top: '90%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        backgroundColor: '#FF971E',
-        color: '#fff',
-        borderRadius: '10px',
-        zIndex: 99,
-        '&:hover': {
-          backgroundColor: '#FFB55F',
-          color: '#fff',
-        },
-      }}
-      variant="contained"
-    >
-      <Link to='/contact' style={{ textDecoration: 'none', color: '#fff' }}>Get a Call from Us</Link>
-    </Button>
-  </div>
+      <Carousel showStatus={false}
+          showThumbs={false}
+          showIndicators={false}
+          infiniteLoop={true}
+          selectedItem={currentSlide} // Control the selected slide using state
+          onChange={(index) => setCurrentSlide(index)} >
   <div style={{ position: 'relative' }}>
     <img src={c2} alt='err' />
-    <Button
-      sx={{
-        position: 'absolute',
-        top: '90%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        backgroundColor: '#FF971E',
-        color: '#fff',
-        borderRadius: '10px',
-        zIndex: 99,
-        '&:hover': {
-          backgroundColor: '#FFB55F',
-          color: '#fff',
-        },
-      }}
-      variant="contained"
-    >
-      <Link to='/contact' style={{ textDecoration: 'none', color: '#fff' }}>Get a Call from Us</Link>
-    </Button>
-  </div>
-  <div style={{ position: 'relative' }}>
-    <img src={c3} alt='err' />
     <Button
       sx={{
         position: 'absolute',
@@ -111,6 +86,50 @@ const Hero = () => {
   </div>
   <div style={{ position: 'relative' }}>
     <img src={c5} alt='err' />
+    <Button
+      sx={{
+        position: 'absolute',
+        top: '90%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        backgroundColor: '#FF971E',
+        color: '#fff',
+        borderRadius: '10px',
+        zIndex: 99,
+        '&:hover': {
+          backgroundColor: '#FFB55F',
+          color: '#fff',
+        },
+      }}
+      variant="contained"
+    >
+      <Link to='/contact' style={{ textDecoration: 'none', color: '#fff' }}>Get a Call from Us</Link>
+    </Button>
+  </div>
+  <div style={{ position: 'relative' }}>
+    <img src={c3} alt='err' />
+    <Button
+      sx={{
+        position: 'absolute',
+        top: '90%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        backgroundColor: '#FF971E',
+        color: '#fff',
+        borderRadius: '10px',
+        zIndex: 99,
+        '&:hover': {
+          backgroundColor: '#FFB55F',
+          color: '#fff',
+        },
+      }}
+      variant="contained"
+    >
+      <Link to='/contact' style={{ textDecoration: 'none', color: '#fff' }}>Get a Call from Us</Link>
+    </Button>
+  </div>
+  <div style={{ position: 'relative' }}>
+    <img src={c1} alt='err' />
     <Button
       sx={{
         position: 'absolute',
